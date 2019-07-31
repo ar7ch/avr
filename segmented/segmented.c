@@ -28,6 +28,7 @@ common cathode: 1 - segment turned on
 			0b11111000, //7
 			0b10000000, //8
 			0b10010000, //9 
+			0b11111111  //empty character
 	};
 #elif BITMAP_TYPE == COMMON_CATHODE
 	#pragma message ("segmented: Compiling with common cathode bitmap")
@@ -42,10 +43,12 @@ common cathode: 1 - segment turned on
 			0b00000111, //7
 			0b01111111, //8
 			0b01101111, //9
+			0b00000000, //empty character
 	};
 #else
 	#error "segmented: Invalid BITMAP_TYPE value"
 #endif
+
 
 void seg_number_to_bitmap(uint16_t number)
 {

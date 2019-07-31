@@ -23,6 +23,11 @@
 
 uint8_t seg_digits_buf[SSD_DIGITS_COUNT]; // a buffer with bitmap for every digit; seg_digits_buf[0] is D1 and so on
 extern uint8_t bitmaps_7seg[];
+typedef enum
+{
+	SEG_EMPTY = 10
+
+}bitmaps_symbols_index;
 
 // set or remove dot segment on required digit
 #define set_dot(val) ( (BITMAP_TYPE == COMMON_CATHODE) ? (val |= (1 << 7)) : (val &= ~(1 << 7)) ) 
